@@ -22,7 +22,7 @@ async function fetchPageJsonAndStoreTheResults(url) {
 (async function() {
   // Request the first page to get the total page count
   const firstPage = 1;
-  const firstPageUrl = `https://addons.mozilla.org/api/v3/addons/search/?app=firefox&type=extension&page_size=50&page=${firstPage}`;
+  const firstPageUrl = `https://addons.mozilla.org/api/v3/addons/search/?app=firefox&type=extension&page_size=50&page=${firstPage}&sort=downloads,users,updated,created`;
   const json = await fetchPageJsonAndStoreTheResults(firstPageUrl);
   console.log("json", json);
   const lastPage = json.page_count; // The API seems to return the incorrect number of pages and not allow navigation beyond this page number - reported as https://github.com/mozilla/addons-server/issues/9392
