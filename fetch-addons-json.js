@@ -39,7 +39,7 @@ async function fetchPageJsonAndStoreTheResults(url) {
     (val, index) =>
       `https://addons.mozilla.org/api/v3/addons/search/?app=firefox&type=extension&page_size=50&page=${index +
         firstPage +
-        1}`,
+        1}&sort=downloads,users,updated,created`,
   );
   console.log("allPageUrls", allPageUrls);
 
